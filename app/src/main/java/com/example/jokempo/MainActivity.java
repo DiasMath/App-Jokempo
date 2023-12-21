@@ -2,7 +2,6 @@ package com.example.jokempo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,14 +11,18 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView textTitulo;
     private ImageView imageResultado;
     private TextView textResultado;
+    private TextView textEscolhaApp;
     private int imagemPadrao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        textTitulo = findViewById(R.id.textTitulo);
+        textEscolhaApp = findViewById(R.id.textEscolhaApp);
         imageResultado = findViewById(R.id.imageResultado);
         textResultado = findViewById(R.id.textResultado);
         imagemPadrao = R.drawable.padrao;
@@ -81,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
 
         imageResultado.setImageResource(imagemPadrao);
         textResultado.setText("Escolha sua Opção:");
-
         findViewById(R.id.btnJogarNovamente).setVisibility(View.GONE);
     }
 
